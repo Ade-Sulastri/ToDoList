@@ -1,0 +1,13 @@
+.task-item.checked .task-name,
+.task-item.checked .task-deadline,
+.task-item.checked .task-priority {
+    @apply text-gray-400;
+}
+
+.task-item.checked .task-name {
+    @apply line-through;
+}
+
+.task-item.checked .task-priority {
+    @apply bg-gray-200;
+}

@@ -5,8 +5,37 @@
                     <span class="sr-only">Your Company</span>
                     <img class="aspect-square w-14 rounded-full" src="{{ asset('images/logo.jpg') }}" alt="">
                 </a>
-                <a href="#" class="font-semibold ">Hitory</a>
-                <a href="{{ route('showTasks') }}" class="font-semibold ">Task</a>
+                <div class="relative inline-block text-left">
+                    <button class="dropdown-button flex items-center font-semibold bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-md focus:outline-none">
+                        Filter
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="currentColor" stroke="currentColor" stroke-width="2" 
+                                  d="M18 4H6c-1.105 0-2.026.91-1.753 1.98a8.02 8.02 0 0 0 4.298 5.238c.823.394 1.455 1.168 1.455 2.08v6.084a1 1 0 0 0 1.447.894l2-1a1 1 0 0 0 .553-.894v-5.084c0-.912.632-1.686 1.454-2.08a8.02 8.02 0 0 0 4.3-5.238C20.025 4.91 19.103 4 18 4z"/>
+                        </svg>
+                    </button>
+                
+                    <div class="dropdown-menu absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden">
+                        <ul class="py-1 text-gray-700">
+                            <li>
+                                <form action="{{ route('orderTasksByDate') }}" method="GET">
+                                <a href="{{ route('orderTasksByDate')}}" class="block px-4 py-2 hover:bg-gray-100">Date Ascending</a>
+                                </form>
+                            </li>
+                            <li>
+                                <form action="{{ route('orderTaskByDateDesc') }}" method="GET">
+                                <a href="{{ route('orderTaskByDateDesc') }}" class="block px-4 py-2 hover:bg-gray-100">Date Descending</a>
+                                </form>
+                            </li>
+                            <li>
+                                <form action="{{ route('orderTaskByPriority') }}" method="GET">
+                                <a href="{{route('orderTaskByPriority')}}" class="block px-4 py-2 hover:bg-gray-100">Priority</a>
+                                </fomr>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+
             </div>
             {{-- btn add task --}}
             <div class="lg:flex lg:flex-1 lg:justify-end gap-3">
@@ -33,3 +62,4 @@
             </div>
         </nav>
     </header>
+

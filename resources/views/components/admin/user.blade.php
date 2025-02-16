@@ -14,7 +14,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                
+
                                 @if ($users && count($users) > 0)
                                     @foreach ($users as $user)
                                         <tr>

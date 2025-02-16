@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>To Do List</title>
     <link rel="shortcut icon" class="rounded-full" href="{{ asset('images/logo.jpg') }}" type="image/x-icon">
+    
     @vite('resources/css/app.css')
 </head>
 
@@ -22,6 +23,9 @@
         </div>
         <x-user.card :tasks="$tasks"></x-user.card>
     </main>
+
+    {{-- script --}}
+    <script src="{{ asset('js/dropdown.js') }}"></script>
 </body>
 
 </html>

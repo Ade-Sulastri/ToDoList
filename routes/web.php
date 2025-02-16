@@ -25,6 +25,16 @@ Route::middleware(['isAuth'])->group(function () {
   Route::get('/edit_task/{id}', [TaskController::class, 'editTask'])->name('editTask');
   Route::post('/edit_task/{id}', [TaskController::class, 'updateTask'])->name('updateTask');
   Route::post('/delete_task/{id}', [TaskController::class, 'deleteTask'])->name('deleteTask');
+
+  // sort by date
+  Route::get('/sort-task-asc', [TaskController::class, 'orderTasksByDate'])->name('orderTasksByDate');
+  Route::get('/sort-task-desc', [TaskController::class, 
+  'orderTaskByDateDesc'])->name('orderTaskByDateDesc');
+  
+  // sort by priority
+  Route::get('/sort-task-priority', [TaskController::class, 
+  'orderTaskByPriority'])->name('orderTaskByPriority');
+
   Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
